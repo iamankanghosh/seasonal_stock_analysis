@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Function to run fetchData every 15 minutes
 const runFetchData = () => {
-    // fetchData()
+    fetchData()
     setInterval(() => {
         fetchData();
     }, 30 * 60 * 1000); // 30 minutes in milliseconds
@@ -134,15 +134,15 @@ app.get('/getdata', async (req, res) => {
 
 // Start sending messages and fetching data
 function callAPI() {
-    axios.get('https://live-banknifty-option-data.onrender.com/')
+    axios.get('https://seasonal-stock-analysis.onrender.com/')
         .then(response => {
-            console.log('API called successfully:');
+            console.log('successfully rerender');
         })
         .catch(error => {
             console.error('Error occurred while calling API:');
         });
 }
-// setInterval(callAPI, 10000);
+setInterval(callAPI, 10000);
 
 runFetchData();
 

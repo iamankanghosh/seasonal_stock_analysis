@@ -128,7 +128,7 @@ async function saveDataToMongoDB(data) {
 
 // Main execution
 async function fetchData() {
-  // console.log("fetchdata called");
+  console.log("fetchdata called");
   // const tickers = ['SBIN.NS','^NSEI',  'TCS.NS', 'INFY.NS','INDHOTEL.NS']; // List of ticker symbols
   const tickers = [
     '^NSEI',         // NIFTY 50
@@ -648,6 +648,6 @@ async function fetchData() {
     console.log('No data to save');
   }
 }
-fetchData();
+// fetchData();
 // Export the fetchData function
 module.exports = { fetchData };
