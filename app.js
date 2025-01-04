@@ -6,7 +6,7 @@ const { getStockData } = require("./getStockData");
 
 const { fetchData } = require('./fetchdata');
 const app = express();
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
