@@ -95,8 +95,12 @@ async function getStockData() {
         ticker: stock.ticker,
         name: stock.name,
         result: recentData,
+        industry:stock.industry,
+        earningdate:stock.earningdate,
+        marketCapInCr : stock.marketCapInCr,
       };
     });
+    // console.log(filteredStockData);
 
     return filteredStockData;
 

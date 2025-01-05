@@ -86,11 +86,16 @@ app.get('/getdata', async (req, res) => {
         <div id="stocks-data">`;
 
         data.forEach((item, index) => {
+            // console.log(item);
             html += `
         <div class="stock-container">
             <div class="stock-header">
-                ${index + 1}. Ticker: ${item.ticker} | Name: ${item.name}
-            </div>`;
+                ${index + 1}. Ticker: ${item.ticker} | Name: ${item.name} | mcap: ${item.marketCapInCr} | industry: ${item.industry} || earning date : ${item.earningdate} 
+
+                
+            </div>
+            `;
+
 
             if (item.result && Array.isArray(item.result)) {
                 let rowHtml = '<div class="row">';
