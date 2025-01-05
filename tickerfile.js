@@ -1,5 +1,61 @@
 const allticker =[
     {
+        "ticker_id": "^NSEI",
+        "industry": "NIFTY 50"
+      },
+      {
+        "ticker_id": "^NSEBANK",
+        "industry": "NIFTY Bank"
+      },
+      {
+        "ticker_id": "^CNXFIN",
+        "industry": "NIFTY Financial Services"
+      },
+      {
+        "ticker_id": "^CNXAUTO",
+        "industry": "NIFTY Auto"
+      },
+      {
+        "ticker_id": "^CNXFMCG",
+        "industry": "NIFTY FMCG"
+      },
+      {
+        "ticker_id": "^CNXIT",
+        "industry": "NIFTY IT"
+      },
+      {
+        "ticker_id": "^CNXPHARMA",
+        "industry": "NIFTY Pharma"
+      },
+      {
+        "ticker_id": "^CNXMETAL",
+        "industry": "NIFTY Metal"
+      },
+      {
+        "ticker_id": "^CNXREALTY",
+        "industry": "NIFTY Realty"
+      },
+      {
+        "ticker_id": "^CNXENERGY",
+        "industry": "NIFTY Energy"
+      },
+      {
+        "ticker_id": "^CNXINFRA",
+        "industry": "NIFTY Infrastructure"
+      },
+      {
+        "ticker_id": "^CNXCMDT",
+        "industry": "NIFTY Commodities"
+      },
+      {
+        "ticker_id": "^CNXMEDIA",
+        "industry": "NIFTY Media"
+      },
+      {
+        "ticker_id": "^CNXPSUBANK",
+        "industry": "NIFTY PSU Bank"
+      },
+    {
         "ticker_id": "RELIANCE.NS",
         "industry": "Oil Gas & Consumable Fuels"
     },
@@ -82,10 +138,6 @@ const allticker =[
     {
         "ticker_id": "POWERGRID.NS",
         "industry": "Power"
-    },
-    {
-        "ticker_id": "TATAMTRDVR.NS",
-        "industry": "Automobile and Auto Components"
     },
     {
         "ticker_id": "TATAMOTORS.NS",
