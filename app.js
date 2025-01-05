@@ -35,17 +35,16 @@ app.get('/getdata', async (req, res) => {
         <style>
         body {
             background-color: black;
-            color: white; /* Ensure text is visible on the black background */
-            font-family: Arial, sans-serif; /* Optional: to make the font more readable */
+            color: white;
+            font-family: Arial, sans-serif;
         }
         .row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start; /* Align items to the left */
+            justify-content: flex-start;
         }
-        
         .result-name {
-            flex: 1 0 6%; /* Adjusted to fit exactly 12 items in one row (100 / 12 = 8.33%) */
+            flex: 1 0 6%;
             margin: 5px;
             text-align: center;
             padding: 10px;
@@ -53,31 +52,34 @@ app.get('/getdata', async (req, res) => {
             font-weight: bold;
             min-height: 50px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        
+        .pchange {
+            font-size: 1.5em; /* Larger size for pchange */
+        }
+        .date {
+            font-size: 0.8em; /* Smaller size for date */
+            margin-top: 5px; /* Space between pchange and date */
+        }
         .positive {
             background-color: green;
             color: white;
         }
-        
         .negative {
             background-color: red;
             color: white;
         }
-        
         .stock-header {
             font-weight: bold;
             padding-top: 20px;
             margin-bottom: 10px;
-            border-top: 2px solid white; /* Added top border */
-
+            border-top: 2px solid white;
         }
-        
         </style>
     </head>
     <body>
@@ -91,22 +93,26 @@ app.get('/getdata', async (req, res) => {
             </div>`;
 
             if (item.result && Array.isArray(item.result)) {
-                let rowHtml = '<div class="row">'; // Start a new row
+                let rowHtml = '<div class="row">';
 
                 item.result.forEach((subItem, subIndex) => {
-                    // Determine class based on pchange value
-                    let pchangeClass = subItem.pchange < 0 ? 'negative' : 'positive';
-                    rowHtml += `<div class="result-name ${pchangeClass}">${subItem.pchange}</div>`;
+                    const date = new Date(subItem.date);
+                    const formattedDate = date.toLocaleString('en-US', { month: 'short', year: '2-digit' }); // Format to MMM-YY
 
-                    // After every 12 items, close and start a new row
+                    let pchangeClass = subItem.pchange < 0 ? 'negative' : 'positive';
+                    rowHtml += `
+                    <div class="result-name ${pchangeClass}">
+                        <div class="pchange">${subItem.pchange}</div>
+                        <div class="date">${formattedDate}</div>
+                    </div>`;
+
                     if ((subIndex + 1) % 12 === 0 || subIndex === item.result.length - 1) {
-                        rowHtml += '</div>'; // End the current row
-                        html += rowHtml; // Append row to HTML
-                        rowHtml = '<div class="row">'; // Start a new row
+                        rowHtml += '</div>';
+                        html += rowHtml;
+                        rowHtml = '<div class="row">';
                     }
                 });
 
-                // If there are less than 12 items, ensure that extra space is aligned to the left
                 if (item.result.length < 12) {
                     rowHtml += '</div>';
                     html += rowHtml;
@@ -127,6 +133,7 @@ app.get('/getdata', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
 
 
 
