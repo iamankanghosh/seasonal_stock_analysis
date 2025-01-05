@@ -76,7 +76,7 @@ async function getStockData() {
 
     // Define the date range (current month minus 12 months)
     const endDate = new Date();
-    const startDate = startOfMonth(subMonths(endDate, 36)); // 24 months ago
+    const startDate = startOfMonth(subMonths(endDate, 48)); // 24 months ago
 
     // Get all stocks in the collection
     const allStockData = await collection.find({}).toArray();
@@ -89,7 +89,7 @@ async function getStockData() {
           const entryDate = new Date(entry.date);
           return entryDate >= startDate && entryDate <= endDate;
         })
-        .slice(0, 36);  // Get only the most recent 24 entries
+        .slice(0, 48);  // Get only the most recent 24 entries
 
       return {
         ticker: stock.ticker,

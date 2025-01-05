@@ -10,7 +10,7 @@ const collectionName = 'monthly_data';
 // Function to fetch and aggregate monthly stock data
 async function getMonthlyDataForTickers(tickerList) {
   const endDate = new Date();
-  const startDate = startOfMonth(subMonths(endDate, 38));
+  const startDate = startOfMonth(subMonths(endDate, 50));
 
   const results = [];
 
