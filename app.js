@@ -12,10 +12,10 @@ app.use(express.json());
 
 // Function to run fetchData every 15 minutes
 const runFetchData = () => {
-    fetchData()
+    // fetchData()
     setInterval(() => {
         fetchData();
-    }, 30 * 60 * 1000); // 30 minutes in milliseconds
+    }, 120 * 60 * 1000); // 120 minutes in milliseconds
 };
 
 app.get('/', (req, res) => {
@@ -154,7 +154,7 @@ function callAPI() {
             console.error('Error occurred while calling API:');
         });
 }
-setInterval(callAPI, 10000);
+setInterval(callAPI, 30*1000);
 
 runFetchData();
 
