@@ -59,7 +59,7 @@ const { subMonths, startOfMonth, endOfMonth } = require('date-fns');
 
 // MongoDB connection settings
 const mongoURI =
-  'mongodb+srv://ankan_user:ankan_user@cluster0.qhihx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+  'mongodb+srv://ankan_user:ankan_user@cluster0.liq1bj6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'stock_data_lastyear';
 const collectionName = 'monthly_data';
 
