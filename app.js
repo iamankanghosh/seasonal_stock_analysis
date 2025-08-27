@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Function to run fetchData every 15 minutes
+fetchData();
 const runFetchData = () => {
     // fetchData()
     setInterval(() => {
